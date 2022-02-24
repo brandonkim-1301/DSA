@@ -1,0 +1,385 @@
+t5a-pex3-cs220-s21-c23brandonkim-main
+----------------------------------------------------------------
+PEX03p01Tests.c
+PEX03p01Tests.h
+listAsLinkedList.c
+listAsLinkedList.h
+rpnCalc.c
+----------------------------------------------------------------
+rpnCalc.c:14:10: warning: non-portable path to file '"listAsLinkedList.h"'; specified path differs in case from file name on disk [-Wnonportable-include-path]
+#include "ListAsLinkedList.h"
+         ^~~~~~~~~~~~~~~~~~~~
+         "listAsLinkedList.h"
+1 warning generated.
+----------------------------------------------------------------
+----------------------------------------------------------------
+TEST01 - createLinkedList
+
+ running test 01 as PID: 82241
+
+	list->numberOfElements == 0 ....
+	list->numberOfElements == 0 - passed
+	list->head == NULL ....
+	list->head == NULL --------- FAILED ---------
+	list->tail == NULL ....
+	list->tail == NULL --------- FAILED ---------
+count of Malloc 2	 count of Free: 1
+------------ memory leak is likely
+
+ completed test 01 as PID: 82241
+
+TEST02 - lengthOfLinkedList(list)
+
+ running test 02 as PID: 82244
+
+
+Length of linked list is 0.
+	lengthOfLinkedList(list)==0 ....
+	lengthOfLinkedList(list)==0 - passed
+count of Malloc 2	 count of Free: 1
+------------ memory leak is likely
+
+ completed test 02 as PID: 82244
+
+TEST03 - appendElementLinkedList()
+
+ running test 03 as PID: 82249
+
+	lengthOfLinkedList(list)==1 ....
+	lengthOfLinkedList(list)==1 - passed
+	list->head == list->tail ....
+	list->head == list->tail --------- FAILED ---------
+	list->head->data == item ....
+	list->head->data == item --------- FAILED ---------
+count of Malloc 4	 count of Free: 3
+------------ memory leak is likely
+
+ completed test 03 as PID: 82249
+
+TEST04 - deleteLinkedList
+
+ running test 04 as PID: 82250
+
+	NON TEST:  - no graceful way to test that allocated memory was freed
+count of Malloc 4	 count of Free: 1
+------------ memory leak is likely
+
+ completed test 04 as PID: 82250
+
+TEST05 - appendElementLinkedList x2
+
+ running test 05 as PID: 82251
+
+	lengthOfLinkedList(list)==2 ....
+	lengthOfLinkedList(list)==2 - passed
+	list->head != list->tail ....
+	list->head != list->tail - passed
+count of Malloc 6	 count of Free: 7
+------------ memory leak is likely
+
+ completed test 05 as PID: 82251
+
+TEST06 - getElementLinkedList from empty list
+
+ running test 06 as PID: 82252
+
+	getElementLinkedList(list, position, &type) == NULL ....
+	getElementLinkedList(list, position, &type) == NULL - passed
+count of Malloc 2	 count of Free: 3
+------------ memory leak is likely
+
+ completed test 06 as PID: 82252
+
+TEST07 - getElementLinkedList - first item from list 
+
+ running test 07 as PID: 82253
+
+	retrievedItem == item ....
+	retrievedItem == item - passed
+	type == REAL_NUMBER ....
+	type == REAL_NUMBER - passed
+	*(double*)item == 42.0 ....
+	*(double*)item == 42.0 - passed
+
+count of Malloc 4	 count of Free: 1
+------------ memory leak is likely
+
+ completed test 07 as PID: 82253
+
+TEST08 - getElementLinkedList - second item from list of 1
+
+ running test 08 as PID: 82254
+
+	retrievedItem == NULL ....
+	retrievedItem == NULL - passed
+count of Malloc 4	 count of Free: 5
+------------ memory leak is likely
+
+ completed test 08 as PID: 82254
+
+TEST09 - getElementLinkedList - first item from list of 2 
+
+ running test 09 as PID: 82255
+
+	retrievedItem == item ....
+	retrievedItem == item - passed
+	type == REAL_NUMBER ....
+	type == REAL_NUMBER - passed
+	*(double*)retrievedItem == 42.0 ....
+	*(double*)retrievedItem == 42.0 - passed
+count of Malloc 6	 count of Free: 7
+------------ memory leak is likely
+
+ completed test 09 as PID: 82255
+
+TEST10 - getElementLinkedList - second item from list of 2 
+
+ running test 10 as PID: 82257
+
+	retrievedItem == item2 ....
+	retrievedItem == item2 - passed
+	type == REAL_NUMBER ....
+	type == REAL_NUMBER - passed
+	*(double*)retrievedItem == 32.0 ....
+	*(double*)retrievedItem == 32.0 - passed
+count of Malloc 6	 count of Free: 7
+------------ memory leak is likely
+
+ completed test 10 as PID: 82257
+
+TEST11 - printLinkedList - list of 2
+
+ running test 11 as PID: 82261
+
+Number of elements: 2
+	NON TEST: **** visual inspection: -> 42.000 -> 32.000 -> NULL
+count of Malloc 6	 count of Free: 7
+------------ memory leak is likely
+
+ completed test 11 as PID: 82261
+
+TEST12 - printLinkedList - empty list
+
+ running test 12 as PID: 82262
+
+Number of elements: 0
+	NON TEST: **** visual inspection: -> NULL
+count of Malloc 2	 count of Free: 3
+------------ memory leak is likely
+
+ completed test 12 as PID: 82262
+
+TEST13 - printLinkedList - list of 1
+
+ running test 13 as PID: 82263
+
+Number of elements: 1
+	NON TEST: **** visual inspection: -> 42.123 -> NULL
+count of Malloc 4	 count of Free: 5
+------------ memory leak is likely
+
+ completed test 13 as PID: 82263
+
+TEST14 - printLinkedList - list of 2
+
+ running test 14 as PID: 82264
+
+Number of elements: 2
+	NON TEST: **** visual inspection: -> ^ -> * -> NULL
+count of Malloc 6	 count of Free: 7
+------------ memory leak is likely
+
+ completed test 14 as PID: 82264
+
+TEST15 - printLinkedList - list of 4
+
+ running test 15 as PID: 82265
+
+Number of elements: 4
+	NON TEST: **** visual inspection: ^ -> 42.000 -> 32.000 -> * -> NULL
+count of Malloc 10	 count of Free: 11
+------------ memory leak is likely
+
+ completed test 15 as PID: 82265
+
+TEST16 - remove second element from list of 4
+
+ running test 16 as PID: 82266
+
+	lengthOfLinkedList(list) == 3 ....
+	lengthOfLinkedList(list) == 3 - passed
+count of Malloc 10	 count of Free: 10
+
+ completed test 16 as PID: 82266
+
+TEST17 - remove third element from list of 4
+
+ running test 17 as PID: 82267
+
+	lengthOfLinkedList(list) == 3 ....
+	lengthOfLinkedList(list) == 3 - passed
+count of Malloc 10	 count of Free: 10
+
+ completed test 17 as PID: 82267
+
+TEST18 - remove first element from list of 4
+
+ running test 18 as PID: 82268
+
+	lengthOfLinkedList(list) == 3 ....
+	lengthOfLinkedList(list) == 3 - passed
+count of Malloc 10	 count of Free: 10
+
+ completed test 18 as PID: 82268
+
+TEST19 - remove last element from list of 4
+
+ running test 19 as PID: 82269
+
+	lengthOfLinkedList(list) == 3 ....
+	lengthOfLinkedList(list) == 3 - passed
+count of Malloc 10	 count of Free: 10
+
+ completed test 19 as PID: 82269
+
+TEST20 - remove fifth element from list of 4
+TEST21 - remove first element from list of 1
+
+ running test 21 as PID: 82271
+
+	lengthOfLinkedList(list) == 0 ....
+	lengthOfLinkedList(list) == 0 - passed
+	list->head == NULL ....
+	list->head == NULL --------- FAILED ---------
+	list->tail == NULL ....
+	list->tail == NULL --------- FAILED ---------
+count of Malloc 4	 count of Free: 4
+
+ completed test 21 as PID: 82271
+
+TEST22 - remove three elements from list of 4
+
+ running test 22 as PID: 82272
+
+	lengthOfLinkedList(list) == 1 ....
+	lengthOfLinkedList(list) == 1 - passed
+	list->head == list->tail ....
+	list->head == list->tail --------- FAILED ---------
+count of Malloc 10	 count of Free: 8
+------------ memory leak is likely
+
+ completed test 22 as PID: 82272
+
+TEST23 - insertElementLinkedList
+
+ running test 23 as PID: 82273
+
+	list->head->data == item ....
+	list->head->data == item --------- FAILED ---------
+	list->head == list->tail ....
+	list->head == list->tail --------- FAILED ---------
+
+	lengthOfLinkedList(list)==1 ....
+	lengthOfLinkedList(list)==1 - passed
+count of Malloc 4	 count of Free: 5
+------------ memory leak is likely
+
+ completed test 23 as PID: 82273
+
+TEST24 - insertElementLinkedList x2
+
+ running test 24 as PID: 82274
+
+	lengthOfLinkedList(list)==2 ....
+	lengthOfLinkedList(list)==2 - passed
+	list->head != list->tail ....
+	list->head != list->tail - passed
+	list->head->data == item ....
+	list->head->data == item --------- FAILED ---------
+count of Malloc 6	 count of Free: 7
+------------ memory leak is likely
+
+ completed test 24 as PID: 82274
+
+TEST25 - insertElementLinkedList x2
+
+ running test 25 as PID: 82275
+
+	lengthOfLinkedList(list)==2 ....
+	lengthOfLinkedList(list)==2 - passed
+	list->head != list->tail ....
+	list->head != list->tail - passed
+	list->tail->data == item ....
+	list->tail->data == item - passed
+count of Malloc 6	 count of Free: 7
+------------ memory leak is likely
+
+ completed test 25 as PID: 82275
+
+TEST26 - insert into list of 4
+
+ running test 26 as PID: 82276
+
+	lengthOfLinkedList(list) == 5 ....
+	lengthOfLinkedList(list) == 5 - passed
+count of Malloc 12	 count of Free: 13
+------------ memory leak is likely
+
+ completed test 26 as PID: 82276
+
+TEST27 - change element at head of list of 4
+
+ running test 27 as PID: 82277
+
+	lengthOfLinkedList(list) == 4 ....
+	lengthOfLinkedList(list) == 4 - passed
+	list->head->data == item ....
+	list->head->data == item --------- FAILED ---------
+
+count of Malloc 12	 count of Free: 5
+------------ memory leak is likely
+
+ completed test 27 as PID: 82277
+
+TEST28 - change element at tail of list of 4
+
+ running test 28 as PID: 82278
+
+	lengthOfLinkedList(list) == 4 ....
+	lengthOfLinkedList(list) == 4 - passed
+	list->tail->data == item ....
+	list->tail->data == item - passed
+
+count of Malloc 12	 count of Free: 5
+------------ memory leak is likely
+
+ completed test 28 as PID: 82278
+
+TEST29 - change element in list of 4
+
+ running test 29 as PID: 82279
+
+	lengthOfLinkedList(list) == 4 ....
+	lengthOfLinkedList(list) == 4 - passed
+
+count of Malloc 12	 count of Free: 5
+------------ memory leak is likely
+
+ completed test 29 as PID: 82279
+
+TEST30 - change element in list of 4
+
+ running test 30 as PID: 82280
+
+	lengthOfLinkedList(list) == 4 ....
+	lengthOfLinkedList(list) == 4 - passed
+
+count of Malloc 12	 count of Free: 5
+------------ memory leak is likely
+
+ completed test 30 as PID: 82280
+
+finished all tests .. 
+passed: 34
+failed : 11
+NON TEST: 6
